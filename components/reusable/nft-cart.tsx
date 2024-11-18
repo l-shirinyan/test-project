@@ -3,10 +3,11 @@ import Link from "next/link";
 import CheckIcon from "@/assets/check.svg";
 import ETHIcon from "@/assets/eth.svg";
 import Arrow from "@/assets/arrow.svg";
-import { nftCart } from "@/types/types";
+import { nftCart } from "@/types/nft";
 
 export default function NFTCart({ nft }: { nft: nftCart }) {
   const { img, name, user, userName, price } = nft;
+  
   return (
     <div className="max-w-[358px] w-full relative justify-self-center sm:justify-self-start">
       <div className="w-full">

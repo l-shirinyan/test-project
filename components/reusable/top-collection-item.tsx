@@ -1,4 +1,4 @@
-import { collectCart } from "@/types/types";
+import { collectCart } from "@/types/nft";
 import Image from "next/image";
 
 export default function TopCollectCart({ cart }: { cart: collectCart }) {

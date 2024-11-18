@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, ReactNode, MutableRefObject } from "react";
 import { SwiperProps } from "swiper/react";
 import { register } from "swiper/element/bundle";
-import { ICoverageData, SwiperType } from "@/types/types";
+import { SwiperType } from "@/types/coverage";
 
 interface ICustomSwiper extends SwiperProps {
   children: ReactNode;

@@ -1,3 +1,4 @@
+"use client"
 import LoveIcon from "@/assets/love.svg";
 import Image from "next/image";
 import CheckIcon from "@/assets/check.svg";
@@ -6,9 +7,12 @@ import user1Img from "@/assets/images/user-1.png";
 import Link from "next/link";
 import CustomSwiper from "../reusable/swiper/custom-swiper";
 import CustomSwiperSlide from "../reusable/swiper/custom-swiper-slide";
-import { dataTopNFT } from "@/utils/top-nfts-now";
 import NFTCart from "../reusable/nft-cart";
+import { useFetchData } from "@/utils/hooks/useFetchData";
+import { nftCart } from "@/types/nft";
 export default function MusicNFTs() {
+  const { data } = useFetchData<{ dataNft: nftCart[] }>("/api/data.json");
+ 
   return (
     <div className="container px-5 sm:px-0 flex flex-col md:flex-row justify-between py-20 gap-10">
       <div className="text-white font-arabic md:w-1/2">
@@ -52,7 +56,7 @@ export default function MusicNFTs() {
             view={{ desktop: 1.5, laptop: 1, md: 1.5, mobile: 1.3 }}
             space={48}
           >
-            {dataTopNFT.map((nft) => {
+            {data?.dataNft.map((nft) => {
               return (
                 <CustomSwiperSlide key={nft.id}>
                   <NFTCart key={nft.id} nft={nft} />;

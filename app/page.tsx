@@ -2,11 +2,10 @@ import HomeBanner from "@/components/home/banner";
 import MusicNFTs from "@/components/home/music-nfts";
 import TopCollection from "@/components/home/top-collection";
 import TopNFTs from "@/components/home/top-nfts";
-import NFTCart from "@/components/reusable/nft-cart";
 import { arabic, rajdhani } from "@/fonts/fonts";
-import { dataTopNFT } from "@/utils/top-nfts-now";
 import Link from "next/link";
 import Arrow from "@/assets/arrow.svg";
+import Nfts from "@/components/home/nfts";
 
 export default function Home() {
   return (
@@ -24,9 +23,7 @@ export default function Home() {
           );
         }}
       >
-        {dataTopNFT.slice(0, 8).map((nft) => {
-          return <NFTCart key={nft.id} nft={nft} />;
-        })}
+     <Nfts/>
       </TopNFTs>
       <TopCollection />
       <MusicNFTs />
